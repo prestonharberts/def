@@ -2,6 +2,12 @@
 
 def is a CLI program that uses sdvc to quickly print StarDict dicitonary items to the Terminal.
 
+## Usage
+
+This program is used `def <word>` but currently does not work with multiple-word dictionary entries like `personal computer`. See the example below for the definition of "how":
+
+<p align=center><img src="https://github.com/user-attachments/assets/519b507b-6736-4aec-b496-1adc21c30c8f" width="512"></p>
+
 ## Setup
 
 I recommend putting this script in your PATH so that it can be called from anywhere. I made a Bin folder in my user directory, moved bib to it, and added this line to my `.bashrc`:
@@ -33,9 +39,3 @@ sudo mkdir -p /usr/share/stardict/dic
 sudo tar -xvjf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict/dic
 rm ~/Downloads/stardict* -r
 ```
-
-## Usage
-
-This program is used `def <word>` but currently does not work with multiple-word dictionary entries like `personal computer`. See the example below for the definition of "how":
-
-
