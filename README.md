@@ -1,6 +1,6 @@
 # def (a CLI dictionary reference tool)
 
-def is a CLI program that uses sdvc to quickly print StarDict dicitonary items to the Terminal.
+def is a CLI program that uses sdvc to quickly print StarDict dicitonary entries to the Terminal.
 
 ## Usage
 
