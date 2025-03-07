@@ -10,13 +10,13 @@ This program is used `def <word>` but currently does not work with multiple-word
 
 ## Setup
 
-I recommend putting this script in your PATH so that it can be called from anywhere. I made a Bin folder in my user directory, moved bib to it, and added this line to my `.bashrc`:
+I recommend putting this script in your PATH so that it can be called from anywhere. I made a Bin folder in my user directory, moved def to it, and added this line to my `.bashrc`:
 
 ```bash
 export PATH=/home/$USER/Bin/:$PATH
 ```
 
-Next, give execution privileges to bib:
+Next, give execution privileges to def:
 
 ```bash
 chmod u+x ~/Bin/def
