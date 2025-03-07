@@ -1,28 +1,29 @@
 #!/bin/bash
 
-text=$(sdcv $1)
+sed_args=(
+  # remove first and last few lines
+  -e 's/Found [0-9].*//')
+  -e 's/-->.*//')
+  -e 's/^ *\[.*//')
 
-# remove first and last few lines
-text=$(echo "$text" | sed -E 's/Found [0-9].*//')
-text=$(echo "$text" | sed -E 's/-->.*//')
-text=$(echo "$text" | sed -E 's/^ *\[.*//')
+  # replace certain characters
+  -e 's/``/\"/')
+  -e "s/''/\"/")
+  -e 's/--/- /')
 
-# replace certain characters
-text=$(echo "$text" | sed -E 's/``/\"/')
-text=$(echo "$text" | sed -E "s/''/\"/")
-text=$(echo "$text" | sed -E 's/--/- /')
+  # remove blank lines
+  -e 's/ *$//g')
+  -e '/^$/d')
+  -e '/^ *$/d')
 
-# remove blank lines
-text=$(echo "$text" | sed -E 's/ *$//g')
-text=$(echo "$text" | sed -E '/^$/d')
-text=$(echo "$text" | sed -E '/^ *$/d')
-
-# fix indentation
-text=$(echo "$text" | sed -E 's/^      ([^ ])/         \1/')
-text=$(echo "$text" | sed -E 's/^(                                                  )([^ ])/\1  \2/')
-text=$(echo "$text" | sed -E 's/^   ([^ ])/      \1/')
-text=$(echo "$text" | sed -E '1s/^/  /')
-text=$(echo "$text" | sed -E 's/^([^ ])/      \1/')
+  # fix indentation
+  -e 's/^      ([^ ])/         \1/')
+  -e 's/^(                                                  )([^ ])/\1  \2/')
+  -e 's/^   ([^ ])/      \1/')
+  -e '1s/^/  /')
+  -e 's/^([^ ])/      \1/')
+)
+text=$(sdcv "$1" | sed -E "${sed_args[@]}")
 
 # fit to terminal width
 width=$(tput cols)
