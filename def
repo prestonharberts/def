@@ -2,26 +2,25 @@
 
 sed_args=(
   # remove first and last few lines
-  -e 's/Found [0-9].*//')
-  -e 's/-->.*//')
-  -e 's/^ *\[.*//')
+  -e 's/Found [0-9].*//'
+  -e 's/-->.*//'
+  -e 's/^ *\[.*//'
 
   # replace certain characters
-  -e 's/``/\"/')
-  -e "s/''/\"/")
-  -e 's/--/- /')
+  -e 's/``/\"/'
+  -e "s/''/\"/"
+  -e 's/--/- /'
 
   # remove blank lines
-  -e 's/ *$//g')
-  -e '/^$/d')
-  -e '/^ *$/d')
+  -e 's/ *$//g'
+  -e '/^$/d'
+  -e '/^ *$/d'
 
   # fix indentation
-  -e 's/^      ([^ ])/         \1/')
-  -e 's/^(                                                  )([^ ])/\1  \2/')
-  -e 's/^   ([^ ])/      \1/')
-  -e '1s/^/  /')
-  -e 's/^([^ ])/      \1/')
+  -e 's/^      ([^ ])/         \1/'
+  -e 's/^(                                                  )([^ ])/\1  \2/'
+  -e 's/^   ([^ ])/      \1/'
+  -e 's/^([^ ])/  \1/'
 )
 text=$(sdcv "$1" | sed -E "${sed_args[@]}")
 
