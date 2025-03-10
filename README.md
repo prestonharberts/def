@@ -4,7 +4,7 @@ def is a CLI program that uses sdvc to quickly print StarDict dicitonary entries
 
 ## Usage
 
-This program is used `def <word>` but currently does not work with multiple-word dictionary entries like `personal computer`. See the example below for the definition of "how":
+This program is used `def <word>` but currently does not work with multiple-word dictionary entries like `cd player`. See the example below for the definition of "how":
 
 <p align=center><img src="https://github.com/user-attachments/assets/519b507b-6736-4aec-b496-1adc21c30c8f" width="512"></p>
 
