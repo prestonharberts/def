@@ -2,6 +2,10 @@
 
 def is a CLI program that uses sdvc to quickly print StarDict dicitonary entries to the Terminal.
 
+- [Usage](#usage)
+- [Setup](#setup)
+- [Dependencies](#dependencies)
+
 ## Usage
 
 This program is used `def <word>` but currently does not work with multiple-word dictionary entries like `cd player`. See the example below for the definition of "how":
